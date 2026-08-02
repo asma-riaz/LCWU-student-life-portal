@@ -2,7 +2,7 @@
 
 The centralized student portal for Lahore College for Women
 University, rebuilt as a React frontend backed by a PHP and MySQL
-API. This is a two part project:
+API. This is a two-part project:
 
 ```
 lcwu-student-life/
@@ -13,13 +13,9 @@ lcwu-student-life/
 
 ## Quick start
 
-Backend first, since the frontend falls back to local demo data if
-it cannot reach the API, but looks for it by default:
-
 ```bash
 cd backend
 mysql -u root -p < database/schema.sql
-cp .env.example .env   # edit with your own DB credentials
 php -S 127.0.0.1:8000
 ```
 
@@ -32,10 +28,10 @@ npm run dev
 ```
 
 Open the URL Vite prints, usually http://localhost:5173. The dev
-server proxies /api to http://localhost:8000, see
+server proxies /api to http://localhost:8080; see
 frontend/vite.config.js if your backend runs somewhere else.
 
-Full setup detail, including the database schema and every endpoint,
+Full setup details, including the database schema and every endpoint,
 is in backend/README.md.
 
 ## What is where
@@ -48,7 +44,7 @@ is in backend/README.md.
   static content in the frontend, since that copy changes rarely and
   does not need its own admin flow.
 - Every section still renders with full demo content even if the
-  backend is not running, each API call in frontend/src/lib/api.js
+  backend is not running; each API call in frontend/src/lib/api.js
   falls back to a local data file with the same shape.
 
 ## Design
@@ -61,7 +57,4 @@ is installed and configured for any new work, while the existing
 design system lives in frontend/src/index.css so the rebuild matches
 pixel for pixel rather than drifting during translation.
 
-No emojis are used anywhere in the interface, all icons come from
-Lucide React, apart from four small social brand marks (Facebook,
-Instagram, X, LinkedIn) that Lucide does not include and are defined
-locally in frontend/src/components/ui/BrandIcons.jsx.
+
