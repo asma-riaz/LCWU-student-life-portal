@@ -1,0 +1,14 @@
+# Blocks direct web access to the config and database folders when
+# this backend is deployed under Apache. The API endpoints in /api
+# still work since they run from inside the api/ folder itself.
+<IfModule mod_authz_core.c>
+  <FilesMatch "\.(php|sql|env)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  <FilesMatch "\.(php|sql|env)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
